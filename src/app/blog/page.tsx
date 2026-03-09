@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
 import SectionLabel from "@/components/ui/SectionLabel";
-import { BLOG_POSTS } from "@/lib/constants";
+import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -10,6 +12,8 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
+  const posts = getAllPosts();
+
   return (
     <section className="py-24 bg-warm-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -24,25 +28,42 @@ export default function BlogPage() {
         </AnimateIn>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {BLOG_POSTS.map((post, i) => (
+          {posts.map((post, i) => (
             <AnimateIn key={post.slug} delay={i * 0.08}>
-              <article className="bg-cream border border-sage/10 rounded-2xl p-8 h-full flex flex-col cursor-pointer hover:shadow-lg transition-shadow">
-                <span className="text-gold text-xs uppercase tracking-widest mb-3">
-                  {post.category}
-                </span>
-                <h2 className="font-serif text-xl text-charcoal mb-3">{post.title}</h2>
-                <p className="text-charcoal/60 leading-relaxed flex-1 mb-4">{post.excerpt}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-sage text-sm">Read More</span>
-                  <time className="text-charcoal/30 text-xs">
-                    {new Date(post.date).toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                      year: "numeric",
-                    })}
-                  </time>
-                </div>
-              </article>
+              <Link href={`/blog/${post.slug}`}>
+                <article className="bg-cream border border-sage/10 rounded-2xl overflow-hidden h-full flex flex-col cursor-pointer hover:shadow-lg transition-shadow">
+                  {post.image && (
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    </div>
+                  )}
+                  <div className="p-8 flex flex-col flex-1">
+                    <span className="text-gold text-xs uppercase tracking-widest mb-3">
+                      {post.category}
+                    </span>
+                    <h2 className="font-serif text-xl text-charcoal mb-3">{post.title}</h2>
+                    <p className="text-charcoal/60 leading-relaxed flex-1 mb-4 text-sm">
+                      {post.excerpt}
+                    </p>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sage text-sm">Read More</span>
+                      <time className="text-charcoal/30 text-xs">
+                        {new Date(post.date + "T12:00:00").toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          year: "numeric",
+                        })}
+                      </time>
+                    </div>
+                  </div>
+                </article>
+              </Link>
             </AnimateIn>
           ))}
         </div>

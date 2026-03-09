@@ -2,9 +2,11 @@ import Image from "next/image";
 import AnimateIn from "@/components/AnimateIn";
 import Button from "@/components/ui/Button";
 import SectionLabel from "@/components/ui/SectionLabel";
-import { SERVICES, TESTIMONIALS, BLOG_POSTS } from "@/lib/constants";
+import { SERVICES, TESTIMONIALS } from "@/lib/constants";
+import { getAllPosts } from "@/lib/blog";
 
 export default function Home() {
+  const blogPosts = getAllPosts().slice(0, 3);
   return (
     <>
       {/* Hero */}
@@ -192,14 +194,29 @@ export default function Home() {
             </div>
           </AnimateIn>
           <div className="grid md:grid-cols-3 gap-8">
-            {BLOG_POSTS.slice(0, 3).map((post, i) => (
+            {blogPosts.map((post, i) => (
               <AnimateIn key={post.slug} delay={i * 0.1}>
-                <div className="bg-cream border border-sage/10 rounded-2xl p-8 h-full flex flex-col">
-                  <span className="text-gold text-xs uppercase tracking-widest mb-3">{post.category}</span>
-                  <h3 className="font-serif text-xl text-charcoal mb-3">{post.title}</h3>
-                  <p className="text-charcoal/60 leading-relaxed flex-1 mb-4">{post.excerpt}</p>
-                  <span className="text-sage text-sm hover:underline cursor-pointer">Read More</span>
-                </div>
+                <a href={`/blog/${post.slug}`} className="block h-full">
+                  <div className="bg-cream border border-sage/10 rounded-2xl overflow-hidden h-full flex flex-col hover:shadow-lg transition-shadow">
+                    {post.image && (
+                      <div className="relative aspect-[16/10] overflow-hidden">
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                        />
+                      </div>
+                    )}
+                    <div className="p-8 flex flex-col flex-1">
+                      <span className="text-gold text-xs uppercase tracking-widest mb-3">{post.category}</span>
+                      <h3 className="font-serif text-xl text-charcoal mb-3">{post.title}</h3>
+                      <p className="text-charcoal/60 leading-relaxed flex-1 mb-4 text-sm">{post.excerpt}</p>
+                      <span className="text-sage text-sm">Read More</span>
+                    </div>
+                  </div>
+                </a>
               </AnimateIn>
             ))}
           </div>
