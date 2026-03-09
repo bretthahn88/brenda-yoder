@@ -73,7 +73,7 @@ export const BOOKS = [
     title: "Fledge: Launching Your Kids Without Losing Your Mind",
     publisher: "Herald Press",
     description: "A practical, faith-filled guide for parents navigating the emotional journey of launching their children into adulthood. Brenda combines professional insight with personal experience as a mom of four.",
-    buyLink: "https://brendayoder.com/fledge-launching-kids-without-losing-mind/",
+    buyLink: "https://www.amazon.com/Fledge-Launching-Your-Without-Losing/dp/1513802364/",
     featured: false,
   },
   {

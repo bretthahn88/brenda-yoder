@@ -5,6 +5,30 @@ export default function Footer() {
   return (
     <footer className="bg-dark text-warm-white/70 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Newsletter */}
+        {/* TODO: Wire to Constant Contact list — replace form action with Constant Contact embed URL */}
+        <div className="mb-12 pb-10 border-b border-warm-white/10">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <label className="text-warm-white text-sm font-medium shrink-0">
+              Join the newsletter
+            </label>
+            <form className="flex gap-2 w-full sm:w-auto">
+              <input
+                type="email"
+                placeholder="Your email"
+                required
+                className="px-4 py-2.5 rounded-full bg-warm-white/10 border border-warm-white/15 text-warm-white placeholder:text-warm-white/30 text-sm focus:outline-none focus:border-gold transition-colors w-full sm:w-64"
+              />
+              <button
+                type="submit"
+                className="px-5 py-2.5 rounded-full bg-gold text-white text-sm font-medium hover:bg-gold/90 transition-colors shrink-0"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-5 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">

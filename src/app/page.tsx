@@ -209,8 +209,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact CTA */}
+      {/* Email Capture */}
+      {/* TODO: Wire to Constant Contact list — replace form action with Constant Contact embed URL */}
       <section className="py-20 bg-sage">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <AnimateIn>
+            <h2 className="font-serif text-4xl text-warm-white mb-4">Stay Grounded</h2>
+            <p className="text-warm-white/80 leading-relaxed mb-8">
+              Encouragement, updates, and simple wisdom delivered to your inbox.
+            </p>
+            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
+              <input
+                type="email"
+                placeholder="Your email address"
+                required
+                className="flex-1 px-5 py-3 rounded-full bg-warm-white text-charcoal placeholder:text-charcoal/40 focus:outline-none focus:ring-2 focus:ring-gold text-sm"
+              />
+              <button
+                type="submit"
+                className="px-7 py-3 rounded-full bg-gold text-white text-sm font-medium tracking-wide hover:bg-gold/90 transition-colors"
+              >
+                Subscribe
+              </button>
+            </form>
+            <p className="text-warm-white/50 text-xs">No spam, ever. Unsubscribe anytime.</p>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-20 bg-brown">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <AnimateIn>
             <h2 className="font-serif text-4xl text-warm-white mb-4">Let&apos;s Connect</h2>

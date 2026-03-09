@@ -48,7 +48,7 @@ export default function BooksPage() {
             )}
             <div className="flex flex-wrap gap-4">
               <Button href={featured?.buyLink || "#"} variant="primary">Order on Amazon</Button>
-              <Button href="#" variant="outline">Media Kit (PDF)</Button>
+              <Button href="/Uncomplicated-Media-Kit.pdf" external variant="outline">Media Kit (PDF)</Button>
             </div>
           </AnimateIn>
         </div>
@@ -95,7 +95,7 @@ export default function BooksPage() {
               devotional published by Guideposts. Her reflections bring the same grounded, honest
               voice readers love in her books.
             </p>
-            <Button href="https://www.amazon.com/s?k=mornings+with+jesus" variant="secondary">
+            <Button href="https://guideposts.org/daily-devotions/" variant="secondary">
               Find Mornings with Jesus
             </Button>
           </AnimateIn>
