@@ -26,7 +26,7 @@ export default function BlogPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {BLOG_POSTS.map((post, i) => (
             <AnimateIn key={post.slug} delay={i * 0.08}>
-              <article className="bg-cream rounded-2xl p-8 h-full flex flex-col cursor-pointer hover:shadow-lg transition-shadow">
+              <article className="bg-cream border border-sage/10 rounded-2xl p-8 h-full flex flex-col cursor-pointer hover:shadow-lg transition-shadow">
                 <span className="text-gold text-xs uppercase tracking-widest mb-3">
                   {post.category}
                 </span>

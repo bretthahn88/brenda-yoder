@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="min-h-[90vh] flex items-center bg-warm-white">
-        <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+      <section className="min-h-[85vh] flex items-center bg-warm-white">
+        <div className="max-w-7xl mx-auto px-6 py-12 md:py-16 grid md:grid-cols-[1fr_1.2fr] gap-8 md:gap-10 items-center">
           <AnimateIn>
             <SectionLabel>Faith &middot; Family &middot; Simplicity &middot; Soul Care</SectionLabel>
             <h1 className="font-serif text-5xl md:text-7xl text-charcoal mt-4 mb-6 leading-tight">
@@ -19,7 +19,7 @@ export default function Home() {
               Grounded. Faithful. Whole.
             </p>
             <p className="text-charcoal/60 leading-relaxed mb-8 max-w-lg">
-              I create welcoming spaces where people can slow down, heal, and grow — in their
+              I create welcoming spaces where people can slow down, heal, and grow in their
               relationship with themselves, with God, and with others.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -33,8 +33,9 @@ export default function Home() {
               alt="Brenda Yoder, licensed therapist and author, standing outdoors"
               width={600}
               height={800}
-              className="rounded-2xl object-cover max-w-md ml-auto w-full"
+              className="rounded-2xl object-cover w-full h-auto md:min-h-[560px]"
               priority
+              sizes="(max-width: 768px) 100vw, 55vw"
             />
           </AnimateIn>
         </div>
@@ -56,7 +57,7 @@ export default function Home() {
       </section>
 
       {/* About Teaser */}
-      <section className="py-24 bg-cream">
+      <section className="py-24 bg-sage/10">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <AnimateIn>
             <Image
@@ -100,8 +101,8 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {SERVICES.map((service, i) => (
               <AnimateIn key={service.title} delay={i * 0.1}>
-                <div className="bg-cream rounded-2xl p-8 h-full flex flex-col">
-                  <div className="w-12 h-12 rounded-full bg-sage/10 flex items-center justify-center mb-5">
+                <div className="bg-cream border border-sage/10 rounded-2xl p-8 h-full flex flex-col">
+                  <div className="w-12 h-12 rounded-full bg-gold/15 flex items-center justify-center mb-5">
                     <span className="text-sage text-xl">
                       {service.icon === "heart" && "♡"}
                       {service.icon === "compass" && "◎"}
@@ -158,7 +159,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-cream">
+      <section className="py-24 bg-brown/10">
         <div className="max-w-7xl mx-auto px-6">
           <AnimateIn>
             <div className="text-center mb-16">
@@ -169,7 +170,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {TESTIMONIALS.map((t, i) => (
               <AnimateIn key={i} delay={i * 0.1}>
-                <div className="bg-warm-white rounded-2xl p-8 h-full flex flex-col">
+                <div className="bg-warm-white border border-gold/15 rounded-2xl p-8 h-full flex flex-col">
                   <p className="text-charcoal/70 italic leading-relaxed flex-1 mb-4">
                     &ldquo;{t.quote}&rdquo;
                   </p>
@@ -193,7 +194,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {BLOG_POSTS.slice(0, 3).map((post, i) => (
               <AnimateIn key={post.slug} delay={i * 0.1}>
-                <div className="bg-cream rounded-2xl p-8 h-full flex flex-col">
+                <div className="bg-cream border border-sage/10 rounded-2xl p-8 h-full flex flex-col">
                   <span className="text-gold text-xs uppercase tracking-widest mb-3">{post.category}</span>
                   <h3 className="font-serif text-xl text-charcoal mb-3">{post.title}</h3>
                   <p className="text-charcoal/60 leading-relaxed flex-1 mb-4">{post.excerpt}</p>

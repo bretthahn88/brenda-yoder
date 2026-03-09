@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import AnimateIn from "@/components/AnimateIn";
 import Button from "@/components/ui/Button";
 import SectionLabel from "@/components/ui/SectionLabel";
-import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 
 export const metadata: Metadata = {
   title: "Speaking",
@@ -46,20 +46,25 @@ export default function SpeakingPage() {
             </p>
             <p className="text-charcoal/70 leading-relaxed mb-8">
               Her topics are rooted in the themes of <em>Uncomplicated</em>: simplicity, soul care,
-              faith, family, and resilience. She speaks like she writes — honestly, warmly, and with
+              faith, family, and resilience. She speaks like she writes: honestly, warmly, and with
               the kind of depth that stays with you.
             </p>
             <Button href="/contact" variant="primary">Inquire About Speaking</Button>
           </AnimateIn>
           <AnimateIn delay={0.2}>
-            {/* PHOTO: Brenda speaking at event */}
-            <PhotoPlaceholder aspect="landscape" label="Brenda speaking at event" />
+            <Image
+              src="/BrendaYoder_Speaking_Pic1.png"
+              alt="Brenda Yoder speaking at an event"
+              width={700}
+              height={525}
+              className="rounded-2xl object-cover w-full"
+            />
           </AnimateIn>
         </div>
       </section>
 
       {/* Topics */}
-      <section className="py-24 bg-cream">
+      <section className="py-24 bg-sage/10">
         <div className="max-w-7xl mx-auto px-6">
           <AnimateIn>
             <div className="text-center mb-16">
@@ -72,7 +77,7 @@ export default function SpeakingPage() {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {topics.map((topic, i) => (
               <AnimateIn key={topic.title} delay={i * 0.1}>
-                <div className="bg-warm-white rounded-2xl p-8">
+                <div className="bg-warm-white border border-sage/15 rounded-2xl p-8">
                   <h3 className="font-serif text-2xl text-charcoal mb-3">{topic.title}</h3>
                   <p className="text-charcoal/60 leading-relaxed">{topic.desc}</p>
                 </div>
@@ -83,7 +88,7 @@ export default function SpeakingPage() {
       </section>
 
       {/* Endorsements */}
-      <section className="py-24 bg-warm-white">
+      <section className="py-24 bg-brown/10">
         <div className="max-w-3xl mx-auto px-6">
           <AnimateIn>
             <SectionLabel>What Event Planners Say</SectionLabel>
@@ -96,7 +101,7 @@ export default function SpeakingPage() {
                 author: "Women's Conference Director",
               },
               {
-                quote: "She brings a rare authenticity to the stage. No fluff, no performance — just truth delivered with warmth and grace.",
+                quote: "She brings a rare authenticity to the stage. No fluff, no performance, just truth delivered with warmth and grace.",
                 author: "Retreat Coordinator",
               },
             ].map((e, i) => (
@@ -123,7 +128,6 @@ export default function SpeakingPage() {
               Or reach out directly to start a conversation.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              {/* Event Planner Kit PDF link placeholder */}
               <Button href="#" variant="secondary">Event Planner Kit (PDF)</Button>
               <Button href="/contact" variant="outline">Contact Brenda</Button>
             </div>

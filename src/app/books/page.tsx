@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import AnimateIn from "@/components/AnimateIn";
 import Button from "@/components/ui/Button";
 import SectionLabel from "@/components/ui/SectionLabel";
-import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 import { BOOKS } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -21,8 +21,13 @@ export default function BooksPage() {
       <section className="py-24 bg-warm-white">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <AnimateIn>
-            {/* PHOTO: Uncomplicated book cover */}
-            <PhotoPlaceholder aspect="portrait" label="Uncomplicated Book Cover" className="max-w-sm mx-auto" />
+            <Image
+              src="/BrendaYoder_Homepage_Pic3.png"
+              alt="Brenda Yoder with her book Uncomplicated"
+              width={600}
+              height={800}
+              className="rounded-2xl object-cover w-full max-w-sm mx-auto"
+            />
           </AnimateIn>
           <AnimateIn delay={0.15}>
             <SectionLabel>Featured Book</SectionLabel>
@@ -43,7 +48,6 @@ export default function BooksPage() {
             )}
             <div className="flex flex-wrap gap-4">
               <Button href={featured?.buyLink || "#"} variant="primary">Order on Amazon</Button>
-              {/* Media kit link placeholder */}
               <Button href="#" variant="outline">Media Kit (PDF)</Button>
             </div>
           </AnimateIn>
@@ -51,7 +55,7 @@ export default function BooksPage() {
       </section>
 
       {/* Other Books */}
-      <section className="py-24 bg-cream">
+      <section className="py-24 bg-brown/10">
         <div className="max-w-7xl mx-auto px-6">
           <AnimateIn>
             <div className="text-center mb-16">
@@ -62,10 +66,10 @@ export default function BooksPage() {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {others.map((book, i) => (
               <AnimateIn key={book.title} delay={i * 0.1}>
-                <div className="bg-warm-white rounded-2xl p-8 flex flex-col h-full">
+                <div className="bg-warm-white border border-brown/10 rounded-2xl p-8 flex flex-col h-full">
                   <h3 className="font-serif text-2xl text-charcoal mb-2">{book.title}</h3>
                   {book.publisher && (
-                    <p className="text-charcoal/40 text-sm mb-4">{book.publisher}</p>
+                    <p className="text-gold text-sm mb-4">{book.publisher}</p>
                   )}
                   <p className="text-charcoal/60 leading-relaxed flex-1 mb-6">{book.description}</p>
                   <Button href={book.buyLink} variant="outline" className="self-start">

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import AnimateIn from "@/components/AnimateIn";
 import Button from "@/components/ui/Button";
 import SectionLabel from "@/components/ui/SectionLabel";
-import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 
 export const metadata: Metadata = {
   title: "Counseling & Coaching",
@@ -23,14 +23,14 @@ export default function CounselingPage() {
             </h1>
             <p className="text-charcoal/60 text-lg leading-relaxed max-w-2xl mx-auto">
               I&apos;m currently accepting a small number of new counseling and coaching clients.
-              My practice is intentionally limited — I work with people, not caseloads.
+              My practice is intentionally limited. I work with people, not caseloads.
             </p>
           </AnimateIn>
         </div>
       </section>
 
       {/* Who It's For */}
-      <section className="py-24 bg-cream">
+      <section className="py-24 bg-sage/10">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <AnimateIn>
             <SectionLabel>Who This Is For</SectionLabel>
@@ -57,8 +57,13 @@ export default function CounselingPage() {
             </ul>
           </AnimateIn>
           <AnimateIn delay={0.15}>
-            {/* PHOTO: Counseling office interior */}
-            <PhotoPlaceholder aspect="landscape" label="Counseling office, warm and inviting" />
+            <Image
+              src="/BrendaYoder_Services_Pic1.jpg"
+              alt="Counseling office, warm and inviting space"
+              width={700}
+              height={525}
+              className="rounded-2xl object-cover w-full"
+            />
           </AnimateIn>
         </div>
       </section>
@@ -78,8 +83,8 @@ export default function CounselingPage() {
                 that God meets us in our most honest moments.
               </p>
               <p>
-                My counseling is faith-integrated, which means your faith is welcome in the room
-                — but so are your doubts, your questions, and the parts of your story that don&apos;t
+                My counseling is faith-integrated, which means your faith is welcome in the room,
+                and so are your doubts, your questions, and the parts of your story that don&apos;t
                 feel tidy. We&apos;ll work together at a pace that feels right for you.
               </p>
               <p>
@@ -92,11 +97,16 @@ export default function CounselingPage() {
       </section>
 
       {/* The Setting */}
-      <section className="py-24 bg-cream">
+      <section className="py-24 bg-brown/10">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <AnimateIn>
-            {/* PHOTO: Farm/office exterior or property */}
-            <PhotoPlaceholder aspect="landscape" label="Still Waters Farm, office setting" />
+            <Image
+              src="/BrendaYoder_Services_Pic2.png"
+              alt="Still Waters Farm, peaceful office setting in Shipshewana"
+              width={700}
+              height={525}
+              className="rounded-2xl object-cover w-full"
+            />
           </AnimateIn>
           <AnimateIn delay={0.15}>
             <SectionLabel>The Setting</SectionLabel>
@@ -127,23 +137,23 @@ export default function CounselingPage() {
           </AnimateIn>
           <div className="grid md:grid-cols-2 gap-8">
             <AnimateIn>
-              <div className="bg-cream rounded-2xl p-8">
+              <div className="bg-sage/10 border border-sage/20 rounded-2xl p-8">
                 <h3 className="font-serif text-2xl text-charcoal mb-3">Individual Counseling</h3>
                 <p className="text-charcoal/60 leading-relaxed mb-2">
                   In-person sessions at my Shipshewana office. Licensed mental health counseling
                   for anxiety, life transitions, burnout, grief, and more.
                 </p>
-                <p className="text-charcoal/40 text-sm">In-person only &middot; Shipshewana, IN</p>
+                <p className="text-sage text-sm font-medium">In-person only &middot; Shipshewana, IN</p>
               </div>
             </AnimateIn>
             <AnimateIn delay={0.1}>
-              <div className="bg-cream rounded-2xl p-8">
+              <div className="bg-gold/10 border border-gold/20 rounded-2xl p-8">
                 <h3 className="font-serif text-2xl text-charcoal mb-3">Life Coaching</h3>
                 <p className="text-charcoal/60 leading-relaxed mb-2">
                   For women ready to make intentional changes. Coaching is forward-focused and
                   action-oriented, available in-person or by phone.
                 </p>
-                <p className="text-charcoal/40 text-sm">In-person or phone</p>
+                <p className="text-gold text-sm font-medium">In-person or phone</p>
               </div>
             </AnimateIn>
           </div>
@@ -151,11 +161,11 @@ export default function CounselingPage() {
       </section>
 
       {/* What to Expect */}
-      <section className="py-24 bg-cream">
+      <section className="py-24 bg-sage">
         <div className="max-w-3xl mx-auto px-6">
           <AnimateIn>
             <SectionLabel>What to Expect</SectionLabel>
-            <h2 className="font-serif text-3xl text-charcoal mt-3 mb-6">
+            <h2 className="font-serif text-3xl text-warm-white mt-3 mb-6">
               Your first step is simple.
             </h2>
             <div className="space-y-6">
@@ -167,8 +177,8 @@ export default function CounselingPage() {
                 <div key={s.step} className="flex gap-6 items-start">
                   <span className="text-gold font-serif text-3xl">{s.step}</span>
                   <div>
-                    <h3 className="font-serif text-xl text-charcoal mb-1">{s.title}</h3>
-                    <p className="text-charcoal/60 leading-relaxed">{s.desc}</p>
+                    <h3 className="font-serif text-xl text-warm-white mb-1">{s.title}</h3>
+                    <p className="text-warm-white/70 leading-relaxed">{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -178,7 +188,7 @@ export default function CounselingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-sage">
+      <section className="py-20 bg-brown">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <AnimateIn>
             <h2 className="font-serif text-4xl text-warm-white mb-4">Ready to take the first step?</h2>

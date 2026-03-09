@@ -40,6 +40,7 @@ export default function Footer() {
               <a href={SITE.social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Instagram</a>
               <a href={SITE.social.twitter} target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">X / Twitter</a>
               <a href={SITE.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">LinkedIn</a>
+              <a href={SITE.social.pinterest} target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Pinterest</a>
             </div>
           </div>
         </div>

@@ -9,6 +9,7 @@ export const SITE = {
     instagram: "https://www.instagram.com/brendayoderspeaks/",
     twitter: "https://x.com/BrendaYoderLMHC",
     linkedin: "https://www.linkedin.com/in/brendalyoder/",
+    pinterest: "https://www.pinterest.com/brendayoderlmhc/",
   },
 };
 

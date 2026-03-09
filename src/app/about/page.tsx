@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import AnimateIn from "@/components/AnimateIn";
 import Button from "@/components/ui/Button";
 import SectionLabel from "@/components/ui/SectionLabel";
-import PhotoPlaceholder from "@/components/ui/PhotoPlaceholder";
 import { CREDENTIALS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet Brenda Yoder — licensed therapist, life coach, author, and speaker based in Shipshewana, Indiana.",
+    "Meet Brenda Yoder: licensed therapist, life coach, author, and speaker based in Shipshewana, Indiana.",
 };
 
 export default function AboutPage() {
@@ -40,8 +40,13 @@ export default function AboutPage() {
             </p>
           </AnimateIn>
           <AnimateIn delay={0.2}>
-            {/* PHOTO: Brenda portrait, warm and approachable */}
-            <PhotoPlaceholder aspect="portrait" label="Brenda, warmth portrait" className="max-w-md ml-auto" />
+            <Image
+              src="/BrendaYoder_About_Pic1.jpg"
+              alt="Brenda Yoder, warm and approachable portrait"
+              width={600}
+              height={800}
+              className="rounded-2xl object-cover w-full"
+            />
           </AnimateIn>
         </div>
       </section>
@@ -60,11 +65,16 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Farm */}
-      <section className="py-24 bg-cream">
+      <section className="py-24 bg-brown/10">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <AnimateIn>
-            {/* PHOTO: Farm/property exterior */}
-            <PhotoPlaceholder aspect="landscape" label="Still Waters Farm, exterior" />
+            <Image
+              src="/BrendaYoder_About_Pic2.jpg"
+              alt="Still Waters Farm, Shipshewana Indiana"
+              width={700}
+              height={525}
+              className="rounded-2xl object-cover w-full"
+            />
           </AnimateIn>
           <AnimateIn delay={0.15}>
             <SectionLabel>The Heart Behind It</SectionLabel>
@@ -76,7 +86,7 @@ export default function AboutPage() {
               <p className="text-charcoal/70 italic leading-relaxed">
                 &ldquo;I create welcoming spaces where people can slow down, heal, and grow in their
                 relationship with themselves, God, and others. Through counseling, coaching, writing,
-                speaking, and thoughtful hospitality, I help nourish holistic growth — offering authentic
+                speaking, and thoughtful hospitality, I help nourish holistic growth by offering authentic
                 connection, grounding principles, and practical life balance for our hurried,
                 complicated lives.&rdquo;
               </p>
