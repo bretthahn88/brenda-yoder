@@ -53,7 +53,7 @@ export default function SpeakingPage() {
           </AnimateIn>
           <AnimateIn delay={0.2}>
             <Image
-              src="/BrendaYoder_Speaking_Pic1.png"
+              src="/BrendaYoder_Speaking_Pic1.jpg"
               alt="Brenda Yoder speaking at an event"
               width={700}
               height={525}

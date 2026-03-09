@@ -58,7 +58,7 @@ export default function CounselingPage() {
           </AnimateIn>
           <AnimateIn delay={0.15}>
             <Image
-              src="/BrendaYoder_Services_Pic1.jpg"
+              src="/BrendaYoder_Services_Pic1.png"
               alt="Counseling office, warm and inviting space"
               width={700}
               height={525}
@@ -101,7 +101,7 @@ export default function CounselingPage() {
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <AnimateIn>
             <Image
-              src="/BrendaYoder_Services_Pic2.png"
+              src="/BrendaYoder_Services_Pic2.jpg"
               alt="Still Waters Farm, peaceful office setting in Shipshewana"
               width={700}
               height={525}

@@ -151,7 +151,7 @@ export default function Home() {
               </p>
               <cite className="text-gold text-sm mt-2 block not-italic">Carol Kent, Speaker and Author</cite>
             </blockquote>
-            <Button href="https://www.amazon.com/dp/1513813560" variant="secondary">
+            <Button href="https://www.amazon.com/Uncomplicated-Simple-Secrets-Compelling-Life/dp/B0CCKJN97J/" variant="secondary">
               Order on Amazon
             </Button>
           </AnimateIn>
