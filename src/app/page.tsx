@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="min-h-[85vh] flex items-center bg-warm-white">
-        <div className="max-w-7xl mx-auto px-6 py-12 md:py-16 grid md:grid-cols-[1fr_1.2fr] gap-8 md:gap-10 items-center">
+      <section className="bg-warm-white">
+        <div className="max-w-7xl mx-auto px-6 md:pl-12 lg:pl-16 py-[120px] grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           <AnimateIn>
             <SectionLabel>Faith &middot; Family &middot; Simplicity &middot; Soul Care</SectionLabel>
             <h1 className="font-serif text-5xl md:text-7xl text-charcoal mt-4 mb-6 leading-tight">
@@ -20,7 +20,7 @@ export default function Home() {
             <p className="text-lg text-charcoal/70 leading-relaxed mb-2">
               Grounded. Faithful. Whole.
             </p>
-            <p className="text-charcoal/60 leading-relaxed mb-8 max-w-lg">
+            <p className="text-charcoal/60 leading-relaxed mb-10 max-w-lg">
               I create welcoming spaces where people can slow down, heal, and grow in their
               relationship with themselves, with God, and with others.
             </p>
@@ -33,11 +33,11 @@ export default function Home() {
             <Image
               src="/BrendaYoder_Homepage_Pic1.jpg"
               alt="Brenda Yoder, licensed therapist and author, standing outdoors"
-              width={600}
-              height={800}
-              className="rounded-2xl object-cover w-full h-auto md:min-h-[560px]"
+              width={560}
+              height={700}
+              className="rounded-2xl object-cover w-full max-h-[480px] mx-auto"
               priority
-              sizes="(max-width: 768px) 100vw, 55vw"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </AnimateIn>
         </div>
